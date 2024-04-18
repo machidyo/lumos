@@ -3,6 +3,7 @@
 # 環境
 * Windows10
 * Unity2021.2.4f1
+* Azure Kinect
 
 ## 補足
 * UnityEngine.Windows.Speech.DictationRecognizerの制約でWindows11では動きません。
@@ -14,3 +15,6 @@
 3. git clone
 4. MoveLibraryFiles.batを実行
 5. Unityのバージョンによってはエラーがでるので Assets/Plugins 配下にコピーされる、System.Memory.dllとSystem.Reflection.Emit.Lightweight.dllを削除
+
+## AzureKinectのセットアップの参考手順
+[Azure Kinectを使ってUnityでBodyTrackingする](https://qiita.com/matchyy/items/96baf873af33f7a9a3c7)
