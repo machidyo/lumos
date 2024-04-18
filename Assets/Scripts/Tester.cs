@@ -5,6 +5,7 @@ public class Tester : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
     
+    public WinSpeechRecognition WinSpeechRecognition => winSpeechRecognition;
     private WinSpeechRecognition winSpeechRecognition;
     
     void Start()

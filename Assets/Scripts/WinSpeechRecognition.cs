@@ -4,6 +4,8 @@ using UnityEngine.Windows.Speech;
 
 public class WinSpeechRecognition : IDisposable
 {
+    public SpeechSystemStatus Status => _dictationRecognizer.Status;
+    
     private readonly DictationRecognizer _dictationRecognizer;
     public event Action<string, ConfidenceLevel> OnDictationResult;
 
@@ -15,7 +17,9 @@ public class WinSpeechRecognition : IDisposable
 
     public void StartSpeechRecognition()
     {
-        Debug.Log("Start speech recognition, waiting for your voice...");
+        _dictationRecognizer.InitialSilenceTimeoutSeconds = 120 * 1000; // 120 seconds
+        Debug.Log($"DEBUG INFO: {_dictationRecognizer.InitialSilenceTimeoutSeconds}, {_dictationRecognizer.AutoSilenceTimeoutSeconds}");
+        Debug.Log("Start speech recognition, waiting for your voice.");
         _dictationRecognizer.Start();
     }
 
