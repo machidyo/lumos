@@ -24,6 +24,7 @@ public static class MagicWand
         if (CanLumos) return;
         
         CanLumos = true;
+        CanNox = false;
         await UniTask.Delay(3000);
         CanLumos = false;
     }
@@ -33,6 +34,7 @@ public static class MagicWand
         if (CanNox) return;
         
         CanNox = true;
+        CanLumos = false;
         await UniTask.Delay(3000);
         CanNox = false;
     }
