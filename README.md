@@ -1,4 +1,9 @@
 # lumos
+Lumos、Noxの練習ができるアプリです。
+杖の振り方、呪文の両方があっていないと光はあなたに訪れません。
+
+## 成功例
+https://github.com/machidyo/lumos/assets/1772636/dbfd9b5c-e2bd-4606-95a1-0469cc181f65
 
 # 環境
 * Windows10
