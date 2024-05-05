@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Windows.Speech;
 
 public class Debugger : MonoBehaviour
 {
@@ -16,11 +17,11 @@ public class Debugger : MonoBehaviour
     
     private void Update()
     {
+        statusText.color = tester.WinSpeechRecognition.Status == SpeechSystemStatus.Stopped ? Color.red : Color.green;
         statusText.text = $"{tester.WinSpeechRecognition.Status}";
-        rightHandText.text = $"RightHand: {rightHand.transform.position}";
-        leftHandText.text = $"LeftHand: {leftHand.transform.position}";
-        var lumos = MagicWand.CanLumos ? "○" : "×"; 
-        var nox = MagicWand.CanNox ? "○" : "×"; 
-        magicWandText.text = $"{lumos}, {nox}";
+        rightHandText.text = $"RH: {rightHand.transform.position}";
+        leftHandText.text = $"LH: {leftHand.transform.position}";
+        magicWandText.color = MagicWand.CanLumos || MagicWand.CanNox ? Color.green : Color.black;
+        magicWandText.text = MagicWand.CanLumos ? "Lumos" : MagicWand.CanNox ? "Nox" : "No Magic";
     }
 }
